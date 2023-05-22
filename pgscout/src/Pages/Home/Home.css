@@ -1,0 +1,244 @@
+.hero {
+    background-color: rgba(252, 252, 252, 0.95);
+    background-image: repeating-radial-gradient(
+        circle at 0 0,
+        transparent 0,
+        #888786 10px
+      ),
+      repeating-linear-gradient(rgba(252, 252, 252, 0.95), #888786);
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  h1,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .nav-left,
+  .nav-right {
+    margin: 30px;
+  }
+  
+  .nav-left {
+    padding-left: 80px;
+  }
+  .nav-right {
+    padding-right: 60px;
+  }
+  
+  .login-btn {
+    align-items: center;
+    appearance: none;
+    background-color: #fcfcfd;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395a;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+  }
+  
+  .login-btn:focus {
+    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  }
+  
+  .login-btn:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .login-btn:active {
+    box-shadow: #d6d6e7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+  
+  .login-btn a {
+    text-decoration: none;
+    color: #36395a;
+  }
+  
+  .hero-cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .join-btn {
+    appearance: none;
+    background-color: #000000;
+    border: 2px solid #1a1a1a;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 30px;
+    min-height: 50px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 150px;
+    will-change: transform;
+    margin-bottom: 50px;
+  }
+  
+  .join-btn:disabled {
+    pointer-events: none;
+  }
+  
+  .join-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .join-btn:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  .hero-right {
+    position: relative;
+    display: inline-block;
+    opacity: 0; /* Initially hide the image */
+    transform: translateX(50px); /* Initially move the image to the right */
+    transition: opacity 0.7s ease, transform 0.7s ease; /* Add transitions */
+  }
+  
+  .hero-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .hero-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    border-radius: 20px;
+  }
+  
+  .cont-img {
+    border-radius: 25px;
+    display: block;
+    opacity: 0.9;
+    height: 470px;
+    width: 680px;
+    position: relative;
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cont-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 50%
+    );
+    opacity: 0.5;
+    pointer-events: none;
+    border-radius: 25px;
+    z-index: 1;
+  }
+  
+  .cont-img::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    z-index: 2;
+  }
+  
+  .hero-left h1 {
+    font-size: 50px;
+  }
+  
+  .hero-left {
+    padding: 50px 0 0 20px;
+    flex-basis: 30%;
+    opacity: 0; /* Initially hide the content */
+    transform: translateX(-50px); /* Initially move the content to the left */
+    transition: opacity 0.7s ease, transform 0.7s ease; /* Add transitions */
+  }
+  
+  .hero-left.animate {
+    opacity: 1; /* Show the content */
+    transform: translateX(0); /* Move the content to its original position */
+  }
+  
+  @media (max-width: 768px) {
+    .cont-img {
+      width: 100%; /* Set the width to 100% for mobile devices */
+    }
+  
+    .hero-left h1 {
+      font-size: 40px;
+    }
+    .hero-left {
+      transform: translateX(-170px);
+    }
+  
+    .hero-left.animate {
+      transform: translateX(-120px);
+    }
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  

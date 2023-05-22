@@ -1,0 +1,531 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 220px; /* Set the flex-basis to 15% */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  background-color: rgba(240, 248, 255, 0.518);
+}
+.sidebar-container {
+  display: flex;
+  height: 100vh;
+  flex-basis: 20%;
+}
+
+.side-top {
+  display: flex;
+  padding: 20px 20px 20px 30px;
+  flex-basis: 20%;
+}
+
+.side-top a {
+  padding-left: 10px;
+  text-decoration: none;
+  color: black;
+  align-self: center;
+}
+
+.side-options {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px 0 35px;
+  flex-basis: 80%;
+  list-style: none;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  color: rgba(0, 0, 0, 0.325);
+}
+
+.option {
+  display: flex;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 60px;
+  padding: 10px;
+}
+
+.option:hover {
+  background-color: lightgrey;
+  border-radius: 20px;
+}
+.option p {
+  align-self: center;
+  padding-left: 10px;
+}
+
+.main-content {
+  flex-basis: 80%;
+}
+
+.link-signout {
+  text-decoration: none;
+  color: black;
+}
+
+.main-container {
+  flex: 1;
+  padding: 20px 0 0px 0px;
+  margin-left: 0;
+  margin-right: 56.067px;
+  padding-right: 10px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -moz-scrollbar-width: none;
+}
+
+.main-container::-webkit-scrollbar {
+  width: 0.1px;
+  background-color: transparent;
+}
+
+.user {
+  display: flex;
+  width: 400px;
+  height: 50px;
+  padding: 16px 16px 0 0;
+}
+
+.user img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #37de48;
+}
+
+.user h3 {
+  padding: 0 0 0 20px;
+  justify-self: center;
+  margin: 0;
+}
+
+.user h3 p {
+  font-weight: 400;
+}
+
+.main-container h1 {
+  padding: 20px 16px 10px 3px;
+}
+
+.dashboard {
+  display: flex;
+}
+
+.add-pg {
+  display: flex;
+  margin: 50px 0 50px 0px;
+  height: 589.2px;
+  background-color: rgba(240, 248, 255, 0.518);
+}
+
+.form-div {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 25px;
+  flex-basis: 50%;
+  margin-right: 20px;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-img {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 25px;
+  flex-basis: 50%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 0px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease-in-out;
+  margin: 0 0 10px 20px;
+  height: 25px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.form-submit {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  min-height: 50px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 150px;
+  will-change: transform;
+  margin-left: 35px;
+}
+
+.form-submit:disabled {
+  pointer-events: none;
+}
+
+.form-submit:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.form-submit:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.form-submit:hover {
+  background-color: #555;
+}
+
+.form-header {
+  margin-left: 20px;
+  font-size: 40px;
+}
+
+.add-form {
+  height: 100px;
+}
+
+.add-img h2 {
+  padding: 18px;
+  margin-bottom: 0;
+}
+
+.upload {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  min-height: 50px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 150px;
+  will-change: transform;
+  margin-left: 35px;
+}
+
+.upload:disabled {
+  pointer-events: none;
+}
+
+.upload:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.upload:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.upload:hover {
+  background-color: #555;
+}
+
+.img-input {
+  margin-left: 35px;
+  margin-bottom: 20px;
+  margin-top: 18px;
+  padding-bottom: 140px;
+}
+
+.main-box {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 80%;
+  margin-right: 30px;
+}
+
+.find-pg {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 25px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(240, 248, 255, 0.699);
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 4px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.401); /* Color of the scroll thumb */
+  border-radius: 2px; /* Rounded corners of the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color of the scroll thumb on hover */
+}
+
+.pg-content {
+  display: flex;
+  border-radius: 25px;
+  margin: 10px;
+  background-color: white;
+  flex-basis: 30%;
+}
+
+.pg-content img {
+  border-radius: 25px;
+  margin: 20px;
+  width: 130px;
+  height: 130px;
+  align-self: center;
+}
+
+.pg-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+.rent {
+  font-weight: 700;
+}
+.address {
+  margin-bottom: 7px;
+  margin-left: 2px;
+}
+
+span {
+  margin-left: 10px;
+}
+
+.pg-icon {
+  color: #555555b3;
+}
+
+.pg-name p {
+  margin-left: 3px;
+}
+
+.pg-name h1 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pg-name {
+  margin-bottom: 17px;
+}
+
+.nopg {
+  margin-top: 10px;
+}
+
+.remove-pgs {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 25px;
+  margin: 20px 0 20px 0;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.remove-pgs h2 {
+  margin-left: 22px;
+  font-size: 40px;
+}
+
+.remove-pgs select {
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 0px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease-in-out;
+  margin: 0 0 20px 20px;
+  overflow: scroll;
+}
+
+.remove-pgs button {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  min-height: 50px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 150px;
+  will-change: transform;
+  margin-left: 20px;
+}
+
+.remove-pgs button:disabled {
+  pointer-events: none;
+}
+
+.remove-pgs button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.remove-pgs button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.remove-pgs button:hover {
+  background-color: #555;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  color: white;
+}
+
+.dark-mode .sidebar {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .sidebar a {
+  color: white;
+}
+
+.dark-mode .option p {
+  color: white;
+}
+
+.dark-mode .main-container {
+  background-color: #1f1f1f;
+}
+
+.dark-mode .user h3 {
+  color: white;
+}
+
+.dark-mode .main-container h1 {
+  color: white;
+}
+
+.dark-mode .dashboard {
+  background-color: #1f1f1f;
+}
+
+.dark-mode .add-pg {
+  background-color: #1f1f1f;
+}
+
+.dark-mode .form-div,
+.dark-mode .add-img {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .form-input {
+  background-color: #333;
+}
+
+.dark-mode .form-input,
+.dark-mode .form-submit,
+.dark-mode .upload,
+.dark-mode .remove-pgs button {
+  border-color: white;
+}
+
+.dark-mode .pg-content,
+.dark-mode .find-pg,
+.dark-mode .remove-pgs {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .pg-info,
+.dark-mode .address,
+.dark-mode .pg-name p {
+  color: white;
+}
+
+.dark-mode .pg-icon {
+  color: white;
+}
+
+.dashboard.dark-mode {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.dark-mode .remove-pgs select {
+  color: white;
+}
+
+.dark-mode .icon {
+  width: 30px;
+  height: 30px;
+  color: lightgrey;
+}
+
+.dark-mode .option:hover {
+  background-color: rgba(211, 211, 211, 0.289);
+  border-radius: 20px;
+}
