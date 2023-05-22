@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" exact Component={<Home />} />
+        <Route path="/" Component={<Home />} />
         <Route path="/login" Component={<Login />} />
         <Route path="/Dashboard" Component={<Dashboard />} />
       </Routes>
