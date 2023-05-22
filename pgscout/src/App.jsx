@@ -6,9 +6,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" Component={<Home />} />
-        <Route path="/login" Component={<Login />} />
-        <Route path="/Dashboard" Component={<Dashboard />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );
