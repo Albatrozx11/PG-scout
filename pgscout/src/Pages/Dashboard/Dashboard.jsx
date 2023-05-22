@@ -110,7 +110,19 @@ export default function Dashboard() {
         });
     });
   };
-
+  const handleSignOut = () => {
+    auth
+      .signOut()
+      .then(() => {
+        // Sign out successful
+        // Perform any additional actions if needed
+      })
+      .catch((error) => {
+        // An error occurred during sign out
+        // Handle the error gracefully
+        console.error("Error signing out:", error);
+      });
+  };
   const handleAddDoc = () => {
     const dbInstance = collection(database, "pg");
 
@@ -176,7 +188,7 @@ export default function Dashboard() {
                 <FaPlus className="icon" />
                 <p>Add new PG</p>
               </li>
-              <a href="/" >
+              <a href="/login" onClick={handleSignOut} className="link-signout">
                 <li className="signout option">
                   <FaSignOutAlt className="icon" />
                   <p>Sign out</p>
