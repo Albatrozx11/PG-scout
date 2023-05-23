@@ -89,3 +89,30 @@
 .p2 {
   margin-left: -20px;
 }
+
+@media (max-width: 768px) {
+  .p2 {
+    margin-left: 2px;
+  }
+
+  .login-button {
+    width: 100%;
+    margin-left: 4px;
+    height: 20%;
+  }
+  .login-cont {
+    z-index: 2;
+    padding-left: 10px;
+  }
+  .login-btn {
+    width: 100%;
+    padding-inline: 70px;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+  }
+  .login {
+    overflow: visible;
+    justify-content: center;
+  }
+}

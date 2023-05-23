@@ -10,6 +10,7 @@
   overflow-y: auto;
   background-color: rgba(240, 248, 255, 0.518);
 }
+
 .sidebar-container {
   display: flex;
   height: 100vh;
@@ -35,6 +36,10 @@
   padding: 10px 20px 0 35px;
   flex-basis: 80%;
   list-style: none;
+}
+
+.menu-lines{
+  display: none;
 }
 
 .icon {
@@ -93,13 +98,15 @@
   padding: 16px 16px 0 0;
 }
 
-.user img {
+.pfp {
   border-radius: 50%;
   width: 50px;
   height: 50px;
   border: 3px solid #37de48;
 }
-
+.menu-lines {
+  display: none;
+}
 .user h3 {
   padding: 0 0 0 20px;
   justify-self: center;
@@ -528,4 +535,76 @@ span {
 .dark-mode .option:hover {
   background-color: rgba(211, 211, 211, 0.289);
   border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .add-pg {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    margin-left: 40px;
+  }
+  .form-div {
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    width: 60%;
+  }
+
+  .add-img {
+    padding-bottom: 20px;
+    width: 70%;
+  }
+
+  .remove-pgs {
+    width: 65%;
+    margin-left: 40px;
+  }
+
+  .img-input {
+    padding-right: 1px;
+  }
+
+  .main-container {
+    margin-left: 40px;
+  }
+
+  .find-pg {
+    width: 64%;
+    margin-left: 40px;
+    padding-bottom: 8px;
+  }
+  .pg-content {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 8px;
+  }
+
+  .pg-content img {
+    width: 300px;
+    height: 300px;
+  }
+  .pg-info {
+    margin-left: 20px;
+    margin-top: 2px;
+  }
+  .sidebar {
+    z-index: 1;
+    justify-content: end;
+    translate: -220px;
+  }
+
+  .menu-lines{
+    display: flex;
+    width:30px;
+    height: 30px;
+    margin-left: 350px;
+    position: absolute;
+    margin-top: 50px;
+  }
 }

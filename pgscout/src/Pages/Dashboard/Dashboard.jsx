@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import "./Dashboard.css";
 import logo from "../../assets/logo-img-1.png";
+import menu from "../../assets/menu-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaPhone } from "react-icons/fa";
 import { faThumbtack } from "@fortawesome/free-solid-svg-icons";
@@ -131,7 +132,6 @@ export default function Dashboard() {
     });
   };
 
-
   const handleDeletePGs = async () => {
     for (const pgId of selectedPGs) {
       await deleteDoc(doc(database, "pg", pgId));
@@ -152,6 +152,7 @@ export default function Dashboard() {
   if (user) {
     return (
       <div className={`dashboard ${darkMode ? "dark-mode" : ""}`}>
+        <img src={menu} alt="men" className="menu-lines"/>
         {/* sidebar */}
         <div className="sidebar-container">
           <nav className="sidebar">
@@ -214,7 +215,7 @@ export default function Dashboard() {
           {/* user-profile */}
           <div className="main-container">
             <div className="user">
-              <img src={user.photoURL} alt="pfp" />
+              <img src={user.photoURL} alt="pfp" className="pfp" />
               <h3>
                 Welcome Back! <p>{user.displayName}</p>
               </h3>
