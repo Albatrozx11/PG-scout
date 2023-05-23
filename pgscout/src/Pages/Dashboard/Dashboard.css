@@ -595,8 +595,6 @@ span {
   }
   .sidebar {
     z-index: 1;
-    justify-content: end;
-    translate: -220px;
   }
 
   .menu-lines{
