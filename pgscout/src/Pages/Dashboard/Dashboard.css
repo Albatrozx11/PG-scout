@@ -17,6 +17,15 @@
   flex-basis: 20%;
 }
 
+/* Menu toggle button - hidden on desktop */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  margin: 12px;
+}
+
 .side-top {
   display: flex;
   padding: 20px 20px 20px 30px;
@@ -294,6 +303,15 @@
   margin-right: 30px;
 }
 
+/* Ensure main content does not hide behind fixed sidebar */
+.main-box {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 80%;
+  margin-right: 30px;
+  margin-left: 220px;
+}
+
 .find-pg {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 25px;
@@ -537,6 +555,12 @@ span {
   border-radius: 20px;
 }
 
+@media (max-width: 1024px) {
+  .main-box {
+    margin-left: 220px;
+  }
+}
+
 @media (max-width: 768px) {
   .dashboard {
     display: flex;
@@ -547,23 +571,28 @@ span {
     display: flex;
     flex-direction: column;
     height: fit-content;
-    width: fit-content;
-    margin-left: 40px;
+    width: 100%;
+    margin-left: 0;
   }
   .form-div {
     padding-bottom: 20px;
-    margin-bottom: 50px;
-    width: 60%;
+    margin-bottom: 24px;
+    width: calc(100% - 24px);
+    margin-left: 12px;
+    margin-right: 12px;
   }
 
   .add-img {
     padding-bottom: 20px;
-    width: 70%;
+    width: calc(100% - 24px);
+    margin-left: 12px;
+    margin-right: 12px;
   }
 
   .remove-pgs {
-    width: 65%;
-    margin-left: 40px;
+    width: calc(100% - 24px);
+    margin-left: 12px;
+    margin-right: 12px;
   }
 
   .img-input {
@@ -571,12 +600,14 @@ span {
   }
 
   .main-container {
-    margin-left: 40px;
+    margin-left: 0;
+    padding: 0 12px;
   }
 
   .find-pg {
-    width: 64%;
-    margin-left: 40px;
+    width: calc(100% - 24px);
+    margin-left: 12px;
+    margin-right: 12px;
     padding-bottom: 8px;
   }
   .pg-content {
@@ -586,23 +617,42 @@ span {
   }
 
   .pg-content img {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: auto;
   }
   .pg-info {
-    margin-left: 20px;
-    margin-top: 2px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 8px;
   }
+
   .sidebar {
-    z-index: 1;
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar-container.open .sidebar {
+    transform: translateX(0);
+  }
+
+  .menu-toggle{
+    display: inline-flex;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 3;
   }
 
   .menu-lines{
     display: flex;
-    width:30px;
+    width: 30px;
     height: 30px;
-    margin-left: 350px;
-    position: absolute;
-    margin-top: 50px;
+    margin: 0;
+    position: static;
+  }
+
+  .main-box {
+    margin-left: 0;
   }
 }

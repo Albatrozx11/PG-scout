@@ -19,6 +19,7 @@ p {
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .nav-left,
@@ -90,6 +91,9 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+  gap: 24px;
+  padding: 0 16px;
 }
 
 .join-btn {
@@ -167,8 +171,8 @@ p {
   border-radius: 25px;
   display: block;
   opacity: 0.9;
-  height: 470px;
-  width: 680px;
+  height: auto;
+  width: min(680px, 90vw);
   position: relative;
   box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(0, 0, 0, 0.3);
 }
@@ -205,12 +209,13 @@ p {
 }
 
 .hero-left h1 {
-  font-size: 50px;
+  font-size: clamp(28px, 6vw, 50px);
 }
 
 .hero-left {
   padding: 50px 0 0 20px;
   flex-basis: 30%;
+  min-width: 260px;
   opacity: 0; /* Initially hide the content */
   transform: translateX(-50px); /* Initially move the content to the left */
   transition: opacity 0.7s ease, transform 0.7s ease; /* Add transitions */
@@ -221,39 +226,71 @@ p {
   transform: translateX(0); /* Move the content to its original position */
 }
 
+@media (max-width: 1024px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+  }
+  .hero-cont {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) {
   .cont-img {
-    opacity: 0;
+    opacity: 1;
   }
   .nav-left {
     margin-left: 12px;
     padding-left: 0;
   }
   .nav-right {
-    margin-right: 25px;
+    margin-right: 16px;
     padding-right: 0;
-    margin-top: 50px;
+    margin-top: 0;
   }
 
   .hero-left h1 {
-    font-size: 40px;
+    font-size: clamp(28px, 8vw, 40px);
   }
   .hero-left {
-    transform: translateX(-170px);
-    color: white;
+    transform: translateX(0);
+    color: inherit;
+    padding-left: 0;
+    text-align: center;
   }
   .join-btn {
-    background-color: #bfbfbf;
-    color: #050505;
+    background-color: #000000;
+    color: #ffffff;
   }
 
   .hero-left.animate {
-    transform: translateX(-120px);
+    transform: translateX(0);
   }
 
   .hero-cont {
     background-image: url(../../assets/images/pg.jpg);
-    background-repeat: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 24px 16px 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-left img {
+    width: 64px;
+    height: 64px;
+  }
+  .login-btn {
+    height: 40px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+  .join-btn {
+    width: 140px;
+    min-height: 44px;
   }
 }
 

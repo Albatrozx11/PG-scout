@@ -45,9 +45,14 @@ export default function Dashboard() {
   const [urlkey, seturlkey] = useState("");
   const { user } = useContext(AuthContext);
   const [darkMode, setDarkMode] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
   };
 
   const fetchPost = async () => {
@@ -152,9 +157,11 @@ export default function Dashboard() {
   if (user) {
     return (
       <div className={`dashboard ${darkMode ? "dark-mode" : ""}`}>
-        <img src={menu} alt="men" className="menu-lines"/>
+        <button className="menu-toggle" onClick={toggleSidebar} aria-label="Toggle menu">
+          <img src={menu} alt="menu" className="menu-lines" />
+        </button>
         {/* sidebar */}
-        <div className="sidebar-container">
+        <div className={`sidebar-container ${isSidebarOpen ? "open" : ""}`}>
           <nav className="sidebar">
             <div className="side-top">
               <a href="/">
