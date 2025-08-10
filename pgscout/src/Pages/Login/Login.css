@@ -65,21 +65,23 @@
 .login-button {
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  width: 40%;
-  height: 25%;
+  width: min(520px, 90%);
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
   background-color: white;
   flex-wrap: wrap;
-  margin-left: -50px;
+  margin-left: 0;
+  padding: 16px;
 }
 
 .login-btn {
   gap: 8px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .p1 {
@@ -90,6 +92,13 @@
   margin-left: -20px;
 }
 
+@media (max-width: 1024px) {
+  .login {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
 @media (max-width: 768px) {
   .p2 {
     margin-left: 2px;
@@ -97,22 +106,36 @@
 
   .login-button {
     width: 100%;
-    margin-left: 4px;
-    height: 20%;
+    margin-left: 0;
+    height: auto;
   }
   .login-cont {
     z-index: 2;
-    padding-left: 10px;
+    padding: 0 12px;
+    align-items: center;
+    text-align: center;
   }
   .login-btn {
     width: 100%;
-    padding-inline: 70px;
+    padding-inline: 24px;
     display: flex;
     flex-direction: column;
-    height: 50%;
+    height: auto;
   }
   .login {
     overflow: visible;
     justify-content: center;
+  }
+  .side-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-head h1 {
+    font-size: 28px;
+  }
+  .login-head p {
+    font-size: 16px;
   }
 }
