@@ -1,0 +1,56 @@
+# CI pipeline for the PG Scout Vite + React frontend.
+# This YAML lives beside package.json in the pgscout/ directory.
+
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - pgscout/**
+
+# Validate pull requests targeting main as well.
+pr:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - pgscout/**
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  nodeVersion: '20.x'
+  appDirectory: '$(Build.SourcesDirectory)/pgscout'
+
+steps:
+  - checkout: self
+    clean: true
+    displayName: 'Checkout source code'
+
+  - task: UseNode@1
+    displayName: 'Use Node.js $(nodeVersion)'
+    inputs:
+      version: '$(nodeVersion)'
+
+  - script: npm ci
+    displayName: 'Install dependencies'
+    workingDirectory: '$(appDirectory)'
+
+  - script: npm run lint
+    displayName: 'Run ESLint'
+    workingDirectory: '$(appDirectory)'
+
+  - script: npm run build
+    displayName: 'Build Vite application'
+    workingDirectory: '$(appDirectory)'
+
+  # Publish the production-ready Vite output for a later deployment pipeline/stage.
+  - task: PublishPipelineArtifact@1
+    displayName: 'Publish frontend build artifact'
+    inputs:
+      targetPath: '$(appDirectory)/dist'
+      artifact: 'pgscout-frontend'
+      publishLocation: 'pipeline'
