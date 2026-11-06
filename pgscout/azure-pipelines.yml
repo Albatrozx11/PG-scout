@@ -22,7 +22,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  nodeVersion: '24.x'
+  nodeVersion: '26.x'
   appDirectory: '$(Build.SourcesDirectory)/pgscout'
 
 steps:
